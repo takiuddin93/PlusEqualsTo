@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Plus Equals To</string>
+    <string name="title_home">Home</string>
+    <string name="title_trending">Trending</string>
+    <string name="title_category">Category</string>
+    <string name="action_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Home fragment</string>
+    <string name="trending_fragment">Trending fragment</string>
+    <string name="category_fragment">Category fragment</string>
+</resources>
