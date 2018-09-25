@@ -1,33 +1,70 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
     <!-- Splash screen theme. -->
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--Main Theme Colors-->
         <!--   primary branding color for the app -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorNightLight</item>
         <!--   darker variant for the status bar and contextual app bars -->
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorNightDark</item>
         <!--   window background color-->
-        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorNightDark</item>
     </style>
 
-    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Light / Day theme. -->
+    <style name="AppDayTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorDayLight</item>
+        <item name="colorPrimaryDark">@color/colorDayDark</item>
+        <item name="colorAccent">@color/colorDay</item>
+        <item name="backgroundcolor">@color/backgroundDay</item>
+        <item name="cardbackground">@color/cardbackgroundDay</item>
+        <item name="textcolor">@color/textcolorDay</item>
+        <item name="tintcolor">@color/tintcolorDay</item>
+        <item name="switchcolor">@color/colorAccentDay</item>
+        <item name="buttoncolor">@color/buttoncolorDay</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!-- Dark / Night theme. -->
+    <style name="AppNightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorNightLight</item>
+        <item name="colorPrimaryDark">@color/colorNightDark</item>
+        <item name="colorAccent">@color/colorNight</item>
+        <item name="backgroundcolor">@color/backgroundNight</item>
+        <item name="cardbackground">@color/cardbackgroundNight</item>
+        <item name="textcolor">@color/textcolorNight</item>
+        <item name="tintcolor">@color/tintcolorNight</item>
+        <item name="switchcolor">@color/colorAccentNight</item>
+        <item name="buttoncolor">@color/buttoncolorNight</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppDayTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--<item name="colorPrimary">@color/colorDayLight</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorDayDark</item>-->
+        <!--<item name="colorAccent">@color/colorNight</item>-->
+    </style>
+
+    <style name="AppDayTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!--<item name="colorPrimary">@color/colorDayLight</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorDayDark</item>-->
+        <!--<item name="colorAccent">@color/colorNight</item>-->
+    </style>
+
+    <style name="AppNightTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--<item name="colorPrimary">@color/colorNightLight</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorNightDark</item>-->
+        <!--<item name="colorAccent">@color/colorDay</item>-->
+    </style>
+
+    <style name="AppNightTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!--<item name="colorPrimary">@color/colorNightLight</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorNightDark</item>-->
+        <!--<item name="colorAccent">@color/colorDay</item>-->
+    </style>
+
+    <style name="CustomAppTheme" parent="Theme.AppCompat">
+        <item name="colorAccent">#FF4081</item>
+    </style>
 
 </resources>

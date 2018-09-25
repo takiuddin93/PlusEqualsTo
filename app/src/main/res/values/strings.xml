@@ -9,4 +9,35 @@
     <string name="home_fragment">Home fragment</string>
     <string name="trending_fragment">Trending fragment</string>
     <string name="category_fragment">Category fragment</string>
+
+    <!-- Notification Layout -->
+    <string name="notification_badge">Title</string>
+
+    <!-- Post Recycler Adapter -->
+    <string name="recycler_title">Title</string>
+    <string name="recycler_author">Author</string>
+
+    <!-- Notification Activity -->
+    <string name="notification_title">Title</string>
+    <string name="notification_content">Content</string>
+
+    <!-- Settings Activity -->
+    <string name="settings_notifications">Notifications Settings</string>
+    <string name="settings_disable_push_notifications">Disable Push Notifications</string>
+    <string name="settings_theme">Theme Settings</string>
+    <string name="settings_theme_mode">Day / Night</string>
+    <string name="settings_theme_layout">Compact Layout</string>
+    <string name="settings_support">Support</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version 1.0.0</string>
+
+    <!-- Menu Item -->
+    <string name="menu_notification">Notification</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Social Item -->
+    <string name="social_share">Share</string>
+    <string name="social_lit">Lit</string>
+
 </resources>

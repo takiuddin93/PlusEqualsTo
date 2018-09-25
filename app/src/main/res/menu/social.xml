@@ -4,11 +4,11 @@
     <item
         android:id="@+id/action_share"
         android:icon="@drawable/ic_share"
-        android:title="Notification"
-        app:showAsAction="always"/>
+        android:title="@string/social_share"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_lit"
         android:icon="@drawable/ic_whatslit"
-        android:title="Settings"
-        app:showAsAction="always"/>
+        android:title="@string/social_lit"
+        app:showAsAction="always" />
 </menu>

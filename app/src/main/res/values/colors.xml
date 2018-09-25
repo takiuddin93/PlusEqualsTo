@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2f2f2f</color>
-    <color name="colorPrimaryDark">#2b2b2b</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorWhite">#FAFAFA</color>
+    <color name="colorDayLight">#EC2238</color>
+    <color name="colorDayDark">#CD182C</color>
+    <color name="colorAccentDay">#FF4081</color>
+    <color name="colorNight">#CD182C</color>
+    <color name="backgroundDay">#FAFAFA</color>
+    <color name="cardbackgroundDay">#FAFAFA</color>
+    <color name="textcolorDay">#2B2B2B</color>
+    <color name="tintcolorDay">#FAFAFA</color>
+    <color name="buttoncolorDay">#FAFAFA</color>
+
+    <color name="colorNightLight">#2F2F2F</color>
+    <color name="colorNightDark">#2B2B2B</color>
+    <color name="colorAccentNight">#FF4081</color>
+    <color name="colorDay">#FAFAFA</color>
+    <color name="backgroundNight">#2B2B2B</color>
+    <color name="cardbackgroundNight">#2B2B2B</color>
+    <color name="textcolorNight">#FAFAFA</color>
+    <color name="tintcolorNight">#2B2B2B</color>
+    <color name="buttoncolorNight">#2B2B2B</color>
 </resources>

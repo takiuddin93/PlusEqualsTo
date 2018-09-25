@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -22,8 +23,15 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     TextView notificationCount;
     int pendingnotificationCount = 0;
+
+    SharedPreference sharedPreference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPreference = new SharedPreference(this);
+        if (sharedPreference.getThemeModeState() == true) {
+            setTheme(R.style.AppNightTheme);
+        } else setTheme(R.style.AppDayTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -35,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -51,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         });
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -71,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -78,11 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 new IntentFilter("NotificationCount")
         );
     }
+
     @Override
     protected void onStop() {
         super.onStop();
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
     }
+
     private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -90,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             setupBadge();
         }
     };
+
     private void setupBadge() {
         Log.d("MainActivity", "Message Notification Body: " + pendingnotificationCount);
         if (notificationCount != null) {
@@ -105,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

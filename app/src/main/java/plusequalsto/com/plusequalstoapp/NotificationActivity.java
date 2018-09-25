@@ -4,14 +4,22 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 public class NotificationActivity extends AppCompatActivity {
     TextView title, content;
     Typeface fonts;
+
+    SharedPreference sharedPreference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPreference = new SharedPreference(this);
+        if (sharedPreference.getThemeModeState() == true) {
+            setTheme(R.style.AppNightTheme);
+        } else setTheme(R.style.AppDayTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
 
@@ -25,6 +33,7 @@ public class NotificationActivity extends AppCompatActivity {
         title.setTypeface(fonts);
         content.setTypeface(fonts);
     }
+
     private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

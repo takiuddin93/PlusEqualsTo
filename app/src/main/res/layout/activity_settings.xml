@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    android:background="?attr/backgroundcolor"
+    tools:context=".SettingsActivity"
+    android:id="@+id/settingBackground">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
+        android:theme="@style/AppDayTheme.AppBarOverlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppDayTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -38,8 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:text="Notifications Settings"
-            android:textColor="@color/colorPrimary"
+            android:text="@string/settings_notifications"
+            android:textColor="?attr/textcolor"
             android:textSize="20sp" />
 
         <Switch
@@ -48,8 +50,9 @@
             android:layout_height="40dp"
             android:layout_below="@+id/notificationPrefHeading"
             android:padding="4dp"
-            android:text="Disable push notifications"
-            android:textColor="@color/colorPrimary"
+            android:text="@string/settings_disable_push_notifications"
+            android:textColor="?attr/textcolor"
+            android:theme="@style/CustomAppTheme"
             android:textSize="16sp" />
 
     </RelativeLayout>
@@ -68,8 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:text="Theme Settings"
-            android:textColor="@color/colorPrimary"
+            android:text="@string/settings_theme"
+            android:textColor="?attr/textcolor"
             android:textSize="20sp" />
 
         <Switch
@@ -78,9 +81,10 @@
             android:layout_height="40dp"
             android:layout_below="@+id/themePrefHeading"
             android:padding="4dp"
-            android:text="Light / Dark"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"/>
+            android:text="@string/settings_theme_mode"
+            android:textColor="?attr/textcolor"
+            android:theme="@style/CustomAppTheme"
+            android:textSize="16sp" />
 
         <Switch
             android:id="@+id/gridPref"
@@ -88,9 +92,10 @@
             android:layout_height="40dp"
             android:layout_below="@+id/themePref"
             android:padding="4dp"
-            android:text="Compact Layout"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"/>
+            android:text="@string/settings_theme_layout"
+            android:textColor="?attr/textcolor"
+            android:theme="@style/CustomAppTheme"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
@@ -109,8 +114,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:text="Support"
-            android:textColor="@color/colorPrimary"
+            android:text="@string/settings_support"
+            android:textColor="?attr/textcolor"
             android:textSize="20sp" />
 
         <TextView
@@ -119,8 +124,8 @@
             android:layout_height="40dp"
             android:layout_below="@+id/supportHeading"
             android:padding="4dp"
-            android:text="Privacy Policy"
-            android:textColor="@color/colorPrimary"
+            android:text="@string/settings_privacy_policy"
+            android:textColor="?attr/textcolor"
             android:textSize="16sp" />
 
     </RelativeLayout>
@@ -139,8 +144,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:text="About"
-            android:textColor="@color/colorPrimary"
+            android:text="@string/settings_about"
+            android:textColor="?attr/textcolor"
             android:textSize="20sp" />
 
         <TextView
@@ -149,8 +154,8 @@
             android:layout_height="40dp"
             android:layout_below="@+id/aboutHeading"
             android:padding="4dp"
-            android:text="Version 1.0.0"
-            android:textColor="@color/colorPrimary"
+            android:text="@string/settings_version"
+            android:textColor="?attr/textcolor"
             android:textSize="16sp" />
 
     </RelativeLayout>

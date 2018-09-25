@@ -4,16 +4,19 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_chrome_reader_mode"
+        android:iconTint="?attr/switchcolor"
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_trending_up"
+        android:iconTint="?attr/switchcolor"
         android:title="@string/title_trending" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_category"
+        android:iconTint="?attr/switchcolor"
         android:title="@string/title_category" />
 
 </menu>

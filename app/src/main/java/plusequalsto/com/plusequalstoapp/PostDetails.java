@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -29,6 +30,9 @@ public class PostDetails extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 //        supportRequestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.AppNightTheme);
+        } else setTheme(R.style.AppDayTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postdetails);
 
@@ -55,7 +59,7 @@ public class PostDetails extends AppCompatActivity {
         String tempAuthor = HomeFragment.mAllPost.get(position).getAuthor().toString();
         if (Integer.valueOf(tempAuthor) == 1) {
             tempAuthor = "Plus Equals To";
-        } else if(Integer.valueOf(tempAuthor) == 2) {
+        } else if (Integer.valueOf(tempAuthor) == 2) {
             tempAuthor = "Taki Uddin";
         } else {
             tempAuthor = "Fahim Sarower";

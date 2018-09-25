@@ -10,6 +10,7 @@ public class CategoriesFragment extends Fragment {
     public CategoriesFragment() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

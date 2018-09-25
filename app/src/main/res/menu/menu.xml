@@ -4,12 +4,12 @@
     <item
         android:id="@+id/action_notifications"
         android:icon="@drawable/ic_notification"
-        android:title="Notification"
+        android:title="@string/menu_notification"
         app:actionLayout="@layout/custom_notification_layout"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_settings"
-        android:title="Settings"
-        app:showAsAction="always"/>
+        android:title="@string/menu_settings"
+        app:showAsAction="always" />
 </menu>
