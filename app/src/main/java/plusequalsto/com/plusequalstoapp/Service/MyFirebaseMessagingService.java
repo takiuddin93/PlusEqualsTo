@@ -41,11 +41,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             sendNotification(remoteMessage);
             count++;
             Log.d("FirebaseMessaging", "Notification Number: " + count);
-            Intent intent = new Intent("NotificationCount");
+            Intent intentCount = new Intent("NotificationCount");
             Bundle bundle = new Bundle();
             bundle.putInt("Count", count);
-            intent.putExtras(bundle);
-            broadcaster.sendBroadcast(intent);
+            intentCount.putExtras(bundle);
+            broadcaster.sendBroadcast(intentCount);
         } else {
             count = 0;
             Log.d("FirebaseMessaging", "Notification Number: " + count);
@@ -91,7 +91,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         notificationBuilder.setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.drawable.ic_plus_transparant)
+                .setSmallIcon(R.drawable.ic_logo_test)
                 .setContentTitle(title)
                 .setContentTitle(content)
                 .setContentInfo("info");

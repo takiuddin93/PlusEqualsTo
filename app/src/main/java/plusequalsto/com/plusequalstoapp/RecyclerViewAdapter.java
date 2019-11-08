@@ -65,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         ((ViewHolder) holder).title.setText(Html.fromHtml(object.title));
         ((ViewHolder) holder).author.setTypeface(authorFonts);
         ((ViewHolder) holder).author.setText("By " + author + ".");
-        Picasso.get().load(HomeFragment.mAllPost.get(position).getBetterFeaturedImage().getMediaDetails().getSizes().getMedium().getSourceUrl()).into(((ViewHolder) holder).imageView);
+        Picasso.get().load(HomeFragment.mAllPosts.get(position).getBetterFeaturedImage().getMediaDetails().getSizes().getMedium().getSourceUrl()).into(((ViewHolder) holder).imageView);
         ((ViewHolder) holder).cardPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

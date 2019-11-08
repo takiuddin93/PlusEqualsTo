@@ -51,12 +51,12 @@ public class PostDetails extends AppCompatActivity {
         Intent pos = getIntent();
         int position = pos.getExtras().getInt("itemPosition");
 
-        String tempTitle = HomeFragment.mAllPost.get(position).getTitle().getRendered().toString();
+        String tempTitle = HomeFragment.mAllPosts.get(position).getTitle().getRendered().toString();
 //        tempTitle = tempTitle.replace("<p>","");
 //        tempTitle = tempTitle.replace("</p>","");
 //        tempTitle = tempTitle.replace("[&hellip;]","");
 
-        String tempAuthor = HomeFragment.mAllPost.get(position).getAuthor().toString();
+        String tempAuthor = HomeFragment.mAllPosts.get(position).getAuthor().toString();
         if (Integer.valueOf(tempAuthor) == 1) {
             tempAuthor = "Plus Equals To";
         } else if (Integer.valueOf(tempAuthor) == 2) {
@@ -65,14 +65,14 @@ public class PostDetails extends AppCompatActivity {
             tempAuthor = "Fahim Sarower";
         }
 
-        String tempDescription = HomeFragment.mAllPost.get(position).getContent().getRendered().toString();
+        String tempDescription = HomeFragment.mAllPosts.get(position).getContent().getRendered().toString();
 //        tempDescription = tempDescription.replace("<p>","");
 //        tempDescription = tempDescription.replace("</p>","");
 //        tempDescription = tempDescription.replace("[&hellip;]","");
 //        tempDescription = tempDescription.replace("&#8211;","-");
 //        tempDescription = tempDescription.replace("&#8217;","'");
 
-        Picasso.get().load(HomeFragment.mAllPost.get(position).getBetterFeaturedImage().getSourceUrl()).into(featuredImage);
+        Picasso.get().load(HomeFragment.mAllPosts.get(position).getBetterFeaturedImage().getSourceUrl()).into(featuredImage);
         title.setTypeface(titleFonts);
         title.setText(Html.fromHtml(tempTitle));
         author.setTypeface(authorFonts);
@@ -116,7 +116,7 @@ public class PostDetails extends AppCompatActivity {
                     Intent.ACTION_SEND);
             share.setType("text/plain");
             share.putExtra(
-                    Intent.EXTRA_TEXT, HomeFragment.mAllPost.get(position).getTitle() + " " + HomeFragment.mAllPost.get(position).getLink());
+                    Intent.EXTRA_TEXT, HomeFragment.mAllPosts.get(position).getTitle() + " " + HomeFragment.mAllPosts.get(position).getLink());
             startActivity(Intent.createChooser(share, "Share Via"));
             return true;
         }
