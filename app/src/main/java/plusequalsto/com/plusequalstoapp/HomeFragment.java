@@ -36,8 +36,10 @@ public class HomeFragment extends Fragment {
     private RecyclerViewAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private String baseURL = "http://www.plusequalsto.com";
-    public static List<AllPost> mAllPost;
+    public static List<AllPosts> mAllPost;
     int cacheSize = 100 * 1024 * 1024; // 100 MiB
+
+    Retrofit retrofit = null;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -66,6 +68,7 @@ public class HomeFragment extends Fragment {
         );
         adapter = new RecyclerViewAdapter(list, getActivity());
         recyclerView.setAdapter(adapter);
+
         // Inflate the layout for this fragment
         return homeView;
     }
@@ -99,47 +102,109 @@ public class HomeFragment extends Fragment {
                 })
                 .build();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseURL)
-                .client(okHttpClient)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        RetrofitArrayApi service = retrofit.create(RetrofitArrayApi.class);
-        Call<List<AllPost>> call = service.getPostInfo();
-        // to make call to dynamic URL
-        // String yourURL = yourURL.replace(BaseURL,"");
-        // Call<List<AllPost>>  call = service.getPostInfo( yourURL);
-        /// to get only 6 post from your blog
-        // http://www.plusequalsto.com/wp-json/wp/v2/posts?per_page=2
-        // to get any specific blog post, use id of post
-        //  http://www.plusequalsto.com/wp-json/wp/v2/posts/1179
-        // to get only title and id of specific
-        // http://www.plusequalsto.com/android/wp-json/wp/v2/posts/1179?fields=id,title
-        call.enqueue(new Callback<List<AllPost>>() {
-            @Override
-            public void onResponse(Call<List<AllPost>> call, Response<List<AllPost>> response) {
-                mAllPost = response.body();
-                progressBar.setVisibility(View.GONE);
-                for (int i = 0; i < response.body().size(); i++) {
-                    Log.e("main ", " title " + response.body().get(i).getTitle().getRendered() + " " +
-                            response.body().get(i).getId());
-                    String author = response.body().get(i).getAuthor().toString();
-                    String date = response.body().get(i).getDate();
-                    list.add(new Model(Model.IMAGE_TYPE, response.body().get(i).getTitle().getRendered(),
-                            author, date,
-                            response.body().get(i).getLinks().getWpFeaturedmedia().get(0).getHref()));
-                    Log.e("mainactivity", " response " + response.body().get(i).getBetterFeaturedImage().getSourceUrl());
-                }
-                adapter.notifyDataSetChanged();
-            }
+        Log.e("HomeFragment", "HomeFragment0 " + retrofit);
 
-            @Override
-            public void onFailure(Call<List<AllPost>> call, Throwable t) {
-            }
-        });
+        if (retrofit == null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(baseURL)
+                    .client(okHttpClient)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            Log.e("HomeFragment", "HomeFragment1 " + retrofit);
+
+            RetrofitArrayApi service = retrofit.create(RetrofitArrayApi.class);
+            Call<List<AllPosts>> call = service.getAllPostsInfo();
+
+            Log.e("HomeFragment", "HomeFragment2 " + call);
+
+            // to make call to dynamic URL
+            // String yourURL = yourURL.replace(BaseURL,"");
+            // Call<List<AllPosts>>  call = service.getAllPostsInfo( yourURL);
+            /// to get only 6 post from your blog
+            // http://www.plusequalsto.com/wp-json/wp/v2/posts?per_page=2
+            // to get any specific blog post, use id of post
+            //  http://www.plusequalsto.com/wp-json/wp/v2/posts/1179
+            // to get only title and id of specific
+            // http://www.plusequalsto.com/android/wp-json/wp/v2/posts/1179?fields=id,title
+            call.enqueue(new Callback<List<AllPosts>>() {
+                @Override
+                public void onResponse(Call<List<AllPosts>> call, Response<List<AllPosts>> response) {
+                    mAllPost = response.body();
+
+                    Log.e("HomeFragment", "HomeFragment3 " + mAllPost);
+
+                    progressBar.setVisibility(View.GONE);
+                    for (int i = 0; i < mAllPost.size(); i++) {
+                        Log.e("HomeFragment", " title " + response.body().get(i).getTitle().getRendered() + " " +
+                                response.body().get(i).getId());
+                        String author = response.body().get(i).getAuthor().toString();
+                        String date = response.body().get(i).getDate();
+                        String categories = response.body().get(i).getCategories().toString();
+                        list.add(new Model(Model.IMAGE_TYPE, response.body().get(i).getTitle().getRendered(),
+                                author, date, categories, response.body().get(i).getLinks().getWpFeaturedmedia().get(0).getHref()));
+                        Log.e("HomeFragment", " response " + response.body().get(i).getJetpackFeaturedMediaUrl());
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public void onFailure(Call<List<AllPosts>> call, Throwable t) {
+
+                    Log.e("HomeFragment", "HomeFragment4 " + t);
+
+                }
+            });
+        } else {
+
+            Log.e("HomeFragment", "HomeFragment1 " + retrofit);
+
+            RetrofitArrayApi service = retrofit.create(RetrofitArrayApi.class);
+            Call<List<AllPosts>> call = service.getAllPostsInfo();
+
+            Log.e("HomeFragment", "HomeFragment2 " + call);
+
+            // to make call to dynamic URL
+            // String yourURL = yourURL.replace(BaseURL,"");
+            // Call<List<AllPosts>>  call = service.getAllPostsInfo( yourURL);
+            /// to get only 6 post from your blog
+            // http://www.plusequalsto.com/wp-json/wp/v2/posts?per_page=2
+            // to get any specific blog post, use id of post
+            //  http://www.plusequalsto.com/wp-json/wp/v2/posts/1179
+            // to get only title and id of specific
+            // http://www.plusequalsto.com/android/wp-json/wp/v2/posts/1179?fields=id,title
+            call.enqueue(new Callback<List<AllPosts>>() {
+                @Override
+                public void onResponse(Call<List<AllPosts>> call, Response<List<AllPosts>> response) {
+                    mAllPost = response.body();
+
+                    Log.e("HomeFragment", "HomeFragment3 " + mAllPost);
+
+                    progressBar.setVisibility(View.GONE);
+                    for (int i = 0; i < mAllPost.size(); i++) {
+                        Log.e("HomeFragment", " title " + response.body().get(i).getTitle().getRendered() + " " +
+                                response.body().get(i).getId());
+                        String author = response.body().get(i).getAuthor().toString();
+                        String date = response.body().get(i).getDate();
+                        String categories = response.body().get(i).getCategories().toString();
+                        list.add(new Model(Model.IMAGE_TYPE, response.body().get(i).getTitle().getRendered(),
+                                author, date, categories, response.body().get(i).getLinks().getWpFeaturedmedia().get(0).getHref()));
+                        Log.e("HomeFragment", " response " + response.body().get(i).getJetpackFeaturedMediaUrl());
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public void onFailure(Call<List<AllPosts>> call, Throwable t) {
+
+                    Log.e("HomeFragment", "HomeFragment4 " + t);
+
+                }
+            });
+        }
     }
 
-    public static List<AllPost> getList() {
+    public static List<AllPosts> getList() {
         return mAllPost;
     }
 }
