@@ -8,15 +8,16 @@ import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter {
     private ArrayList<Model> dataset;
@@ -61,18 +62,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         } else {
             author = "Fahim Sarower";
         }
+
+        Log.e("RecyclerViewAdapter", String.valueOf(object.title));
+
         ((ViewHolder) holder).title.setTypeface(titleFonts);
         ((ViewHolder) holder).title.setText(Html.fromHtml(object.title));
         ((ViewHolder) holder).author.setTypeface(authorFonts);
         ((ViewHolder) holder).author.setText("By " + author + ".");
-        Picasso.get().load(HomeFragment.mAllPosts.get(position).getBetterFeaturedImage().getMediaDetails().getSizes().getMedium().getSourceUrl()).into(((ViewHolder) holder).imageView);
+        Picasso.get().load(HomeFragment.mAllPost.get(position).getJetpackFeaturedMediaUrl()).into(((ViewHolder) holder).imageView);
         ((ViewHolder) holder).cardPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, PostDetails.class);
-                Bundle bundle = ActivityOptions.makeCustomAnimation(mContext, R.anim.slide_in_up, R.anim.slide_out_up).toBundle();
+//                Bundle bundle = ActivityOptions.makeCustomAnimation(mContext, R.anim.slide_in_up, R.anim.slide_out_up).toBundle();
                 intent.putExtra("itemPosition", position);
-                mContext.startActivity(intent, bundle);
+                mContext.startActivity(intent);
             }
         });
         /// dataset.get(position)
