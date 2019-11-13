@@ -4,6 +4,7 @@
     android:id="@+id/cardPosts"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:labelFor="@id/cardPosts"
     android:layout_marginLeft="4dp"
     android:layout_marginRight="4dp"
     android:layout_marginBottom="1dp"
@@ -18,6 +19,7 @@
 
         <ImageView
             android:id="@+id/imageThumbnail"
+            android:contentDescription="@string/imageThumbnail"
             android:layout_width="170.67dp"
             android:layout_height="113.78dp"
             android:layout_gravity="center_vertical"
@@ -47,9 +49,10 @@
 
             <TextView
                 android:id="@+id/title"
+                android:contentDescription="@string/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Title"
+                android:text="@string/title"
                 android:textColor="?attr/textcolor"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -71,9 +74,10 @@
 
             <TextView
                 android:id="@+id/author"
+                android:contentDescription="@string/author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Author"
+                android:text="@string/author"
                 android:textColor="?attr/textcolor"
                 android:textSize="16sp" />
         </RelativeLayout>

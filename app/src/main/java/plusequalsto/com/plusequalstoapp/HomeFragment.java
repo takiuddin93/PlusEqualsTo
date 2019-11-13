@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment {
                             throws IOException {
                         Request request = chain.request();
                         if (!isNetworkAvailable()) {
-                            int maxStale = 60 * 60 * 24 * 7; // tolerate 2-weeks stale \
+                            int maxStale = 60 * 60 * 24; // tolerate one day stale
                             request = request
                                     .newBuilder()
                                     .header("Cache-Control", "public, only-if-cached, max-stale=" + maxStale)

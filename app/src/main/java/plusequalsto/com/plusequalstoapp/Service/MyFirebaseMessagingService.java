@@ -32,7 +32,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-        // TODO(developer): Handle FCM messages here.
+        // Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
         Log.d("FirebaseMessaging", "From: " + remoteMessage.getFrom());
         Log.d("FirebaseMessaging", "Message Notification Body: " + remoteMessage.getData());
@@ -75,6 +75,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         String title = data.get("title");
         String content = data.get("content");
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        assert notificationManager != null;
         String NOTIFICATION_CHANNEL_ID = "PlusEqualsTo";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             @SuppressLint("WrongConstant")

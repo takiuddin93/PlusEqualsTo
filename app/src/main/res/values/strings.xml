@@ -5,10 +5,16 @@
     <string name="title_category">Category</string>
     <string name="action_notifications">Notifications</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Fragments name -->
     <string name="home_fragment">Home fragment</string>
     <string name="trending_fragment">Trending fragment</string>
     <string name="category_fragment">Category fragment</string>
+
+    <!-- Content Description -->
+    <string name="notificationBell">Notification Bell</string>
+    <string name="imageThumbnail">Image Thumbnail</string>
+    <string name="title">Title</string>
+    <string name="author">Author</string>
 
     <!-- Notification Layout -->
     <string name="notification_badge">Title</string>
