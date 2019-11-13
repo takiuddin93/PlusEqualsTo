@@ -31,7 +31,6 @@
             app:srcCompat="@drawable/ic_test" />
 
         <RelativeLayout
-            android:id="@+id/relativeLayoutTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

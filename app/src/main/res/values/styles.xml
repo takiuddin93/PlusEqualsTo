@@ -51,18 +51,6 @@
         <!--<item name="colorAccent">@color/colorNight</item>-->
     </style>
 
-    <style name="AppNightTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <!--<item name="colorPrimary">@color/colorNightLight</item>-->
-        <!--<item name="colorPrimaryDark">@color/colorNightDark</item>-->
-        <!--<item name="colorAccent">@color/colorDay</item>-->
-    </style>
-
-    <style name="AppNightTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
-        <!--<item name="colorPrimary">@color/colorNightLight</item>-->
-        <!--<item name="colorPrimaryDark">@color/colorNightDark</item>-->
-        <!--<item name="colorAccent">@color/colorDay</item>-->
-    </style>
-
     <style name="CustomAppTheme" parent="Theme.AppCompat">
         <item name="colorAccent">#FF4081</item>
     </style>

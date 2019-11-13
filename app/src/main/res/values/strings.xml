@@ -3,10 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_trending">Trending</string>
     <string name="title_category">Category</string>
-    <string name="action_notifications">Notifications</string>
 
     <!-- Fragments name -->
-    <string name="home_fragment">Home fragment</string>
     <string name="trending_fragment">Trending fragment</string>
     <string name="category_fragment">Category fragment</string>
 
@@ -17,11 +15,8 @@
     <string name="author">Author</string>
 
     <!-- Notification Layout -->
-    <string name="notification_badge">Title</string>
 
     <!-- Post Recycler Adapter -->
-    <string name="recycler_title">Title</string>
-    <string name="recycler_author">Author</string>
 
     <!-- Notification Activity -->
     <string name="notification_title">Title</string>
